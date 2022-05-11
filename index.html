@@ -1,0 +1,49 @@
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+    <meta name=”apple-mobile-web-app-capable” content=”yes”>
+</head>
+
+<body>
+    <div id="container">
+        <div class="group">
+            <div id="grouplevel0" class="level">
+                1
+            </div>
+            <div class="xpbar">
+                <div style="background-color:lawngreen;" class ="fill" id="xp0"></div>
+            </div>
+            <div id= "xpgain0" class="xpgain"></div>
+            <div contenteditable="true" class="groupName">Group 1</div>
+            <button onclick="score(`0`,`10`)" class="greenButton"></button>
+            <button onClick="score(`0`,`-5`)" class="yellowButton"></button>
+            <button onClick="score(`0`,`-10`)" class="redButton"></button>
+        </div>
+        <div class="group">
+            <div id="grouplevel1" class="level">
+                1
+            </div>
+            <div class="xpbar">
+                <div style="background-color:orangered;" class ="fill" id="xp1"></div>
+            </div>
+            <div id= "xpgain1" class="xpgain"></div>
+            <div contenteditable="true" class="groupName">Group 2</div>
+            <button onclick="score(`1`,`10`)" class="greenButton"></button>
+            <button onClick="score(`1`,`-5`)" class="yellowButton"></button>
+            <button onClick="score(`1`,`-10`)" class="redButton"></button>
+        </div>
+        <div class="group">
+            <div id="grouplevel2" class="level">
+                1
+            </div>
+            <div class="xpbar">
+                <div style="background-color:royalblue;" class ="fill" id="xp2"></div>
+            </div>
+            <div id= "xpgain2" class="xpgain"></div>
+            <div contenteditable="true" class="groupName">Group 3</div>
+            <button onclick="score(`2`,`10`)" class="greenButton"></button>
+            <button onClick="score(`2`,`-5`)" class="yellowButton"></button>
+            <button onClick="score(`2`,`-10`)" class="redButton"></button>
+        </div>
+    </div>
+</body>
