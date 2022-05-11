@@ -4,6 +4,12 @@ html{
     background-color: deepskyblue
 }
 
+#reset{
+    font-size: 0.5em;
+    color: white;
+    cursor: pointer;
+}
+
 #container{
     height: 100%;
     background-color: white;
