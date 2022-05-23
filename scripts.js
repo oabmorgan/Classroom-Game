@@ -44,7 +44,7 @@ function load(){
         groups[i].pct = 0;
         setLevelText(i);
         document.getElementById("groupName"+i).innerHTML = groups[i].name
-        //document.getElementById("char"+i).src = "004.png";
+        document.getElementById("char"+i).src = "char/"+(i+1)+"/1.png";
     }
 }
 
@@ -62,6 +62,7 @@ function reset(){
 function draw(timePassed) {    
     for(var i=0; i<groups.length; i++){
         groups[i].name = document.getElementById("groupName"+i).innerHTML;
+        setLevelText(i);
         if(groups[i].pct < groups[i].xp){
             groups[i].pct = groups[i].pct + 1;
             var height = groups[i].pct *2;
@@ -84,8 +85,8 @@ function draw(timePassed) {
         } else {
             document.getElementById("xpgain"+i).style.opacity -= 0.01;
         }
-        document.getElementById("char"+i).style.width = 10+groups[i].level*30+"%";
-        document.getElementById("char"+i).style.height = 10+groups[i].level*30+"%";
+        document.getElementById("char"+i).style.width = 25+groups[i].level*20+"%";
+        document.getElementById("char"+i).style.height = 25+groups[i].level*20+"%";
     }
 }
 
@@ -101,14 +102,27 @@ function levelUp(id){
 function setLevelText(id){
     var grouplevel = document.getElementById("grouplevel"+id);
     grouplevel.innerHTML = groups[id].level;
-    if(groups[id].level >= 3){
-        grouplevel.style.backgroundColor = "#4dbf49";
-    }
-    if(groups[id].level >= 4){
-        grouplevel.style.backgroundColor = "#73bbff";
-    }
-    if(groups[id].level >= 5){
-        grouplevel.style.backgroundColor = "#ffe054";
+    switch(groups[id].level){
+        case 0:
+        case 1:
+        case 2:
+            document.getElementById("char"+id).src = "char/"+(id+1)+"/1.png";
+            grouplevel.style.backgroundColor = "white";
+            break;
+        case 3:
+        case 4:
+            document.getElementById("char"+id).src = "char/"+(id+1)+"/2.png";
+            grouplevel.style.backgroundColor = "#4dbf49";
+            break;
+        case 5:
+        case 6:
+            document.getElementById("char"+id).src = "char/"+(id+1)+"/3.png";
+            grouplevel.style.backgroundColor = "#73bbff";        
+            break;
+        default:
+            document.getElementById("char"+id).src = "char/"+(id+1)+"/4.png";
+            grouplevel.style.backgroundColor = "#fc03a1";        
+            break;
     }
 }
 
