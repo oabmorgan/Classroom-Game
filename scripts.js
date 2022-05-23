@@ -39,7 +39,7 @@ function load(){
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
 
-    for(var i=0; i<groups.length-1; i++){
+    for(var i=0; i<groups.length; i++){
         document.getElementById("grouplevel"+i).innerHTML = groups[i].level;
         groups[i].pct = 0;
         setLevelText(i);
@@ -60,7 +60,7 @@ function reset(){
 }
 
 function draw(timePassed) {    
-    for(var i=0; i<groups.length-1; i++){
+    for(var i=0; i<groups.length; i++){
         groups[i].name = document.getElementById("groupName"+i).innerHTML;
         if(groups[i].pct < groups[i].xp){
             groups[i].pct = groups[i].pct + 1;
@@ -84,8 +84,8 @@ function draw(timePassed) {
         } else {
             document.getElementById("xpgain"+i).style.opacity -= 0.01;
         }
-        document.getElementById("char"+i).style.width = 30+groups[i].level*20+"%";
-        document.getElementById("char"+i).style.height = 30+groups[i].level*20+"%";
+        document.getElementById("char"+i).style.width = 10+groups[i].level*30+"%";
+        document.getElementById("char"+i).style.height = 10+groups[i].level*30+"%";
     }
 }
 
