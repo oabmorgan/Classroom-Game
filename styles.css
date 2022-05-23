@@ -3,6 +3,9 @@ html{
     font-size: 2em;
     background-color: deepskyblue;
     background-image:url(background.png);
+    background-size:     cover;                      /* <------ */
+    background-repeat:   no-repeat;
+    background-position: center center; 
 }
 
 #reset{
