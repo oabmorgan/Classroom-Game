@@ -1,7 +1,8 @@
 html{
     font-family: sans-serif;
     font-size: 2em;
-    background-color: deepskyblue
+    background-color: deepskyblue;
+    background-image:url(background.png);
 }
 
 #reset{
