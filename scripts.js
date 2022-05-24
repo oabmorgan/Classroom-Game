@@ -44,11 +44,6 @@ function load(){
         groups[i].pct = 0;
         setLevelText(i);
         document.getElementById("groupName"+i).innerHTML = groups[i].name
-        if(groups[i].name.length > 0){
-            document.getElementById("groupName"+i).setAttribute("contenteditable", false);
-        }
-        document.getElementById("char"+i).src = "char/"+(i+1)+"/1.png";
-    }
 }
 
 function save(){
