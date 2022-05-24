@@ -38,6 +38,19 @@ document.addEventListener("DOMContentLoaded", function(event){
   load();
 });
 
+document.getElementById("groupName0").addEventListener("input", function() {
+    save();
+}, false);
+document.getElementById("groupName1").addEventListener("input", function() {
+    save();
+}, false);
+document.getElementById("groupName2").addEventListener("input", function() {
+    save();
+}, false);
+document.getElementById("groupName3").addEventListener("input", function() {
+    save();
+}, false);
+
 function load(){
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
