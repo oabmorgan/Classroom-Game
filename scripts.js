@@ -12,28 +12,31 @@ var groups = [
         "level": 1,
         "xp": 0,
         "pct": 0,
-        "name" : ""
+        "name" : "1"
     },
     {
         "level": 1,
         "xp": 0,
         "pct": 0,
-        "name" : ""
+        "name" : "2"
     },
     {
         "level": 1,
         "xp": 0,
         "pct": 0,
-        "name" : ""
+        "name" : "3"
     },
     {
         "level": 1,
         "xp": 0,
         "pct": 0,
-        "name" : ""
+        "name" : "4"
     }
 ];
 
+document.addEventListener("DOMContentLoaded", function(event){
+  load();
+});
 
 function load(){
     var json_str = getCookie('mycookie');
@@ -98,8 +101,8 @@ function levelUp(id){
     groups[id].level += 1;
     document.getElementById("xpgain"+id).innerHTML = "Level Up!";
     document.getElementById("xpgain"+id).style.color = "white";
-    save();
     setLevelText(id);
+    save();
 }
 
 function setLevelText(id){
