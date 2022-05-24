@@ -44,6 +44,11 @@ function load(){
         groups[i].pct = 0;
         setLevelText(i);
         document.getElementById("groupName"+i).innerHTML = groups[i].name
+        if(groups[i].name.length > 0){
+            document.getElementById("groupName"+i).setAttribute("contenteditable", false);
+        }
+        document.getElementById("char"+i).src = "char/"+(i+1)+"/1.png";
+    }
 }
 
 function save(){
@@ -93,8 +98,8 @@ function levelUp(id){
     groups[id].level += 1;
     document.getElementById("xpgain"+id).innerHTML = "Level Up!";
     document.getElementById("xpgain"+id).style.color = "white";
-    setLevelText(id);
     save();
+    setLevelText(id);
 }
 
 function setLevelText(id){
