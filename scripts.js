@@ -42,19 +42,11 @@ function load(){
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
 
-    
-    for(var i=0; i<groups.length; i++){
-        setLevelText(i);
-    }
-    
     for(var i=0; i<groups.length; i++){
         document.getElementById("grouplevel"+i).innerHTML = groups[i].level;
         groups[i].pct = 0;
         setLevelText(i);
         document.getElementById("groupName"+i).innerHTML = groups[i].name
-        if(groups[i].name.length > 0){
-            document.getElementById("groupName"+i).setAttribute("contenteditable", false);
-        }
         document.getElementById("char"+i).src = "char/"+(i+1)+"/1.png";
     }
 }
