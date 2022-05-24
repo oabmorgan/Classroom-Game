@@ -101,8 +101,8 @@ function draw(timePassed) {
         } else {
             document.getElementById("xpgain"+i).style.opacity -= 0.01;
         }
-        document.getElementById("char"+i).style.width = 25+groups[i].level*20+"%";
-        document.getElementById("char"+i).style.height = 25+groups[i].level*20+"%";
+        document.getElementById("char"+i).style.width = 25+(groups[i].level * 20) + groups[i].xp*0.2+"%";
+        document.getElementById("char"+i).style.height = 25+(groups[i].level * 20) + groups[i].xp*0.2+"%";
     }
 }
 
