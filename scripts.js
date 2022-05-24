@@ -42,6 +42,11 @@ function load(){
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
 
+    
+    for(var i=0; i<groups.length; i++){
+        setLevelText(i);
+    }
+    
     for(var i=0; i<groups.length; i++){
         document.getElementById("grouplevel"+i).innerHTML = groups[i].level;
         groups[i].pct = 0;
