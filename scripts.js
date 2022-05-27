@@ -52,6 +52,13 @@ document.getElementById("groupName3").addEventListener("input", function() {
 }, false);
 
 function load(){
+    var q1 = Math.floor(Math.random() * 9) +1;
+    var q2 = Math.floor(Math.random() * 9) +1;
+    let check = prompt(q1+" x "+ q2 +"= ?");
+    if(check != q1*q2){
+        document.getElementById("container").innerHTML = "TEACHERS ONLY!";
+    }
+    save();
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
 
