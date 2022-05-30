@@ -55,7 +55,7 @@ function load(){
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
     
-    if(groups[i].name == ""){
+    if(groups[0].name == "1"){
         var q1 = Math.floor(Math.random() * 8) +2;
         var q2 = Math.floor(Math.random() * 8) +2;
         let check = prompt(q1+" x "+ q2);
