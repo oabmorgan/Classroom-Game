@@ -53,15 +53,15 @@ document.getElementById("groupName3").addEventListener("input", function() {
 
 function load(){
     var json_str = getCookie('mycookie');
-    groups = JSON.parse(json_str);
-    
-    if(groups[0].name == "1"){
-        var q1 = Math.floor(Math.random() * 8) +2;
-        var q2 = Math.floor(Math.random() * 8) +2;
+    if(json_str.length == 0){;
+        var q1 = Math.floor(Math.random() * 5) +5;
+        var q2 = Math.floor(Math.random() * 5) +5;
         let check = prompt(q1+" x "+ q2);
         if(check != q1*q2){
             document.getElementById("container").innerHTML = "Teachers Only!";
         }
+    } else {
+        groups = JSON.parse(json_str);
     }
     
     for(var i=0; i<groups.length; i++){
