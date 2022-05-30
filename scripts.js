@@ -52,16 +52,18 @@ document.getElementById("groupName3").addEventListener("input", function() {
 }, false);
 
 function load(){
-    var q1 = Math.floor(Math.random() * 9) +1;
-    var q2 = Math.floor(Math.random() * 9) +1;
-    let check = prompt(q1+" x "+ q2 +"= ?");
-    if(check != q1*q2){
-        document.getElementById("container").innerHTML = "TEACHERS ONLY!";
-    }
-    save();
     var json_str = getCookie('mycookie');
     groups = JSON.parse(json_str);
-
+    
+    if(groups[i].name == ""){
+        var q1 = Math.floor(Math.random() * 8) +2;
+        var q2 = Math.floor(Math.random() * 8) +2;
+        let check = prompt(q1+" x "+ q2);
+        if(check != q1*q2){
+            document.getElementById("container").innerHTML = "TEACHERS ONLY!";
+        }
+    }
+    
     for(var i=0; i<groups.length; i++){
         document.getElementById("grouplevel"+i).innerHTML = groups[i].level;
         groups[i].pct = 0;
