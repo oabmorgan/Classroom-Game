@@ -79,8 +79,7 @@ function save(){
 }
 
 function reset(){
-    var json_group = JSON.stringify(groups);
-    createCookie('mycookie', json_group, 0.00000001);
+    createCookie('mycookie', "", 0.0000001);
     location.reload();
 }
 
