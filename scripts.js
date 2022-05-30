@@ -58,7 +58,7 @@ function load(){
         var q2 = Math.floor(Math.random() * 5) +5;
         let check = prompt(q1+" x "+ q2);
         if(check != q1*q2){
-            document.getElementById("container").innerHTML = "TEACHERS ONLY!";
+            document.getElementById("container").innerHTML = "Teachers Only!";
         }
     } else {
         groups = JSON.parse(json_str);

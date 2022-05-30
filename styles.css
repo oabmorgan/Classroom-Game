@@ -42,6 +42,8 @@ html{
     background-color: white;
     width: 900px;
     margin: 0px auto;
+    text-align: center;
+    font-size: 2em;
 }
 
 .rewards{
