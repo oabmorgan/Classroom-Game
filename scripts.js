@@ -10,24 +10,28 @@ let timer = setInterval(function() {
 var groups = [
     {
         "level": 1,
+        "char": 1,
         "xp": 0,
         "pct": 0,
         "name" : "1"
     },
     {
         "level": 1,
+        "char": 2,
         "xp": 0,
         "pct": 0,
         "name" : "2"
     },
     {
         "level": 1,
+        "char": 3,
         "xp": 0,
         "pct": 0,
         "name" : "3"
     },
     {
         "level": 1,
+        "char": 4,
         "xp": 0,
         "pct": 0,
         "name" : "4"
@@ -56,7 +60,6 @@ function load(){
         groups[i].pct = 0;
         setLevelText(i);
         document.getElementById("groupName"+i).innerHTML = groups[i].name
-        document.getElementById("char"+i).src = "char/"+(i+1)+"/1.png";
     }
 }
 
@@ -76,11 +79,11 @@ function draw(timePassed) {
         setLevelText(i);
         if(groups[i].pct < groups[i].xp){
             groups[i].pct = groups[i].pct + 1;
-            var height = groups[i].pct *2;
-            if(height > 100){
-                height = 100;
+            var height = groups[i].pct;
+            if(height > xpToLevel(i)){
+                height = xpToLevel(i);
             }
-            document.getElementById("xp"+i).style.height = height + '%';
+            document.getElementById("xp"+i).style.height = (100/xpToLevel(i))*height + '%';
             if(groups[i].pct >= groups[i].xp){  
                 if(groups[i].xp >= xpToLevel(i)){
                     levelUp(i);
@@ -88,11 +91,11 @@ function draw(timePassed) {
             }
         } else if(groups[i].pct > groups[i].xp){
             groups[i].pct -=1;
-            var height = groups[i].pct *2;
-            if(height > 100){
-                height = 100;
+            var height = groups[i].pct;
+            if(height > xpToLevel(i)){
+                height = xpToLevel(i);
             }
-            document.getElementById("xp"+i).style.height = height + '%';
+            document.getElementById("xp"+i).style.height = (100/xpToLevel(i))*height + '%';
         } else {
             document.getElementById("xpgain"+i).style.opacity -= 0.01;
         }
@@ -116,8 +119,10 @@ function setLevelText(id){
     switch(groups[id].level){
         case 0:
         case 1:
+            document.getElementById("char"+id).src = "char/egg.png";
+            break;
         case 2:
-            document.getElementById("char"+id).src = "char/"+(id+1)+"/1.png";
+            document.getElementById("char"+id).src = "char/"+groups[id].char+"/1.png";            
             grouplevel.style.backgroundColor = "white";
             break;
         case 3:
@@ -158,8 +163,8 @@ function score(group, delta) {
 }
 
 function xpToLevel(group){
-    return 50;
-    //return 40 + (groups[group].level * 10);
+    //return 50;
+    return 35 + (groups[group].level * 5);
 }
 function createCookie(name, value, days) {
     var expires;
