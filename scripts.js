@@ -5,33 +5,63 @@ let timer = setInterval(function() {
   let timePassed = Date.now() - start;
   // draw the animation at the moment timePassed
   draw(timePassed);
-}, 20);
+}, 10);
+var chars = [
+    {
+        "name": "grass",
+        "color": "rgb(155,212,185)"
+    },
+    {
+        "name": "grass2",
+        "color": "rgb(156,189,133)"
+    },
+    {
+        "name": "water",
+        "color": "rgb(189,210,231)"
+    },
+    {
+        "name": "water2",
+        "color": "rgb(128,203,212)"
+    },
+    {
+        "name": "fire",
+        "color": "rgb(217,165,127)"
+    },
+    {
+        "name": "fire2",
+        "color": "rgb(233,145,112)"
+    },
+    {
+        "name": "electric",
+        "color": "rgb(233,205,119)"
+    }    
+];
 
 var groups = [
     {
         "level": 1,
-        "char": 1,
+        "char": 0,
         "xp": 0,
         "pct": 0,
         "name" : "1"
     },
     {
         "level": 1,
-        "char": 2,
+        "char": 0,
         "xp": 0,
         "pct": 0,
         "name" : "2"
     },
     {
         "level": 1,
-        "char": 3,
+        "char": 0,
         "xp": 0,
         "pct": 0,
         "name" : "3"
     },
     {
         "level": 1,
-        "char": 4,
+        "char": 0,
         "xp": 0,
         "pct": 0,
         "name" : "4"
@@ -51,6 +81,11 @@ function load(){
         if(check != q1*q2){
             document.getElementById("container").innerHTML = "TEACHERS ONLY!";
         }
+        for(var i=0; i<groups.length; i++){
+            var r = Math.floor(Math.random() * chars.length);
+            groups[i].char = chars[r];
+            chars.splice(r, 1);
+        }        
     } else {
         groups = JSON.parse(json_str);
     }
@@ -76,7 +111,6 @@ function reset(){
 function draw(timePassed) {    
     for(var i=0; i<groups.length; i++){
         groups[i].name = document.getElementById("groupName"+i).innerHTML;
-        setLevelText(i);
         if(groups[i].pct < groups[i].xp){
             groups[i].pct = groups[i].pct + 1;
             var height = groups[i].pct;
@@ -115,28 +149,33 @@ function levelUp(id){
 
 function setLevelText(id){
     var grouplevel = document.getElementById("grouplevel"+id);
+    var groupxp = document.getElementById("xp"+id);
     grouplevel.innerHTML = groups[id].level;
+    if(groups[id].level > 1){
+        groupxp.style.backgroundColor = groups[id].char.color;
+    }
     switch(groups[id].level){
         case 0:
         case 1:
             document.getElementById("char"+id).src = "char/egg.png";
             break;
         case 2:
-            document.getElementById("char"+id).src = "char/"+groups[id].char+"/1.png";            
+        case 3:
+            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/1.png";
             grouplevel.style.backgroundColor = "white";
             break;
-        case 3:
         case 4:
-            document.getElementById("char"+id).src = "char/"+(id+1)+"/2.png";
+        case 5:
+            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/2.png";
             grouplevel.style.backgroundColor = "#4dbf49";
             break;
-        case 5:
         case 6:
-            document.getElementById("char"+id).src = "char/"+(id+1)+"/3.png";
+        case 7:    
+            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/3.png";
             grouplevel.style.backgroundColor = "#73bbff";        
             break;
         default:
-            document.getElementById("char"+id).src = "char/"+(id+1)+"/4.png";
+            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/4.png";
             grouplevel.style.backgroundColor = "#fc03a1";        
             break;
     }
