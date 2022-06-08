@@ -162,21 +162,34 @@ function setLevelText(id){
         case 2:
         case 3:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/1.png";
-            grouplevel.style.backgroundColor = "white";
             break;
         case 4:
         case 5:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/2.png";
-            grouplevel.style.backgroundColor = "#4dbf49";
             break;
         case 6:
         case 7:    
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/3.png";
-            grouplevel.style.backgroundColor = "#73bbff";        
             break;
         default:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/4.png";
-            grouplevel.style.backgroundColor = "#fc03a1";        
+            break;
+    }
+    switch(groups[id].level){
+        case 0:
+        case 1:
+        case 2:
+            grouplevel.style.backgroundColor = "white";
+            break;
+        case 3:
+            grouplevel.style.backgroundColor = "#4dbf49";
+            break;
+        case 4:
+        case 5:
+            grouplevel.style.backgroundColor = "#73bbff";
+            break;
+        default:
+            grouplevel.style.backgroundColor = "#fc03a1";
             break;
     }
 }
