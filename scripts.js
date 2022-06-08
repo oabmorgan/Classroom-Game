@@ -161,13 +161,15 @@ function setLevelText(id){
             break;
         case 2:
         case 3:
+            case 4:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/1.png";
             break;
-        case 4:
+        
         case 5:
+            case 6:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/2.png";
             break;
-        case 6:
+        
         case 7:    
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/3.png";
             break;
