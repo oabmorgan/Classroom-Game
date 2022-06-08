@@ -160,21 +160,14 @@ function setLevelText(id){
             document.getElementById("char"+id).src = "char/egg.png";
             break;
         case 2:
-        case 3:
-            case 4:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/1.png";
             break;
-        
-        case 5:
-            case 6:
+        case 3:            
+        case 4:
             document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/2.png";
             break;
-        
-        case 7:    
-            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/3.png";
-            break;
         default:
-            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/4.png";
+            document.getElementById("char"+id).src = "char/"+groups[id].char.name+"/3.png";
             break;
     }
     switch(groups[id].level){
@@ -184,9 +177,9 @@ function setLevelText(id){
             grouplevel.style.backgroundColor = "white";
             break;
         case 3:
+        case 4:
             grouplevel.style.backgroundColor = "#4dbf49";
             break;
-        case 4:
         case 5:
             grouplevel.style.backgroundColor = "#73bbff";
             break;
