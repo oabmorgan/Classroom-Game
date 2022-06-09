@@ -175,16 +175,28 @@ function setLevelText(id){
         case 1:
         case 2:
             grouplevel.style.backgroundColor = "white";
+            document.getElementById("item"+id+"0").style.visibility = "hidden";
+            document.getElementById("item"+id+"1").style.visibility = "hidden";
+            document.getElementById("item"+id+"2").style.visibility = "hidden";
             break;
         case 3:
         case 4:
             grouplevel.style.backgroundColor = "#4dbf49";
+            document.getElementById("item"+id+"0").style.visibility = "visible";
+            document.getElementById("item"+id+"1").style.visibility = "visible";
+            document.getElementById("item"+id+"2").style.visibility = "hidden";
             break;
         case 5:
             grouplevel.style.backgroundColor = "#73bbff";
+            document.getElementById("item"+id+"0").style.visibility = "visible";
+            document.getElementById("item"+id+"1").style.visibility = "visible";
+            document.getElementById("item"+id+"2").style.visibility = "visible";
             break;
         default:
             grouplevel.style.backgroundColor = "#fc03a1";
+            document.getElementById("item"+id+"0").style.visibility = "visible";
+            document.getElementById("item"+id+"1").style.visibility = "visible";
+            document.getElementById("item"+id+"2").style.visibility = "visible";
             break;
     }
 }
