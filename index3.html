@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script type="text/javascript" src="scripts.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <div class="group">
+            <div id="grouplevel0" class="level">
+                1
+            </div>
+            <div class="itemframe">
+                <img id="item00" class="item" src="items/Furikake_Green.png">
+                <img id="item01" class="item" src="items/Furikake_Purple.png">
+                <img id="item02" class="item" src="items/Furikake_Mix.png">
+            </div>
+            <div class="xpbar">
+                <div class ="fill" id="xp0"></div>
+            </div>
+            <div id= "xpgain0" class="xpgain"></div>
+            <div class="characterframe">
+                <img id="char0"  class="character" src="">
+            </div>
+            <div>
+            <button onclick="score(`0`,`10`)" class="greenButton"></button>
+            <button onClick="score(`0`,`-5`)" class="yellowButton"></button>
+            <button onClick="score(`0`,`-10`)" class="redButton"></button>
+            </div>
+            <div id="groupName0"  contenteditable="true" class="groupName"></div>
+        </div>
+        <div class="group">
+            <div id="grouplevel1" class="level">
+                1
+            </div>
+            <div class="itemframe">
+                <img id="item10" class="item" src="items/Furikake_Green.png">
+                <img id="item11" class="item" src="items/Furikake_Purple.png">
+                <img id="item12" class="item" src="items/Furikake_Mix.png">
+            </div>
+            <div class="xpbar">
+                <div class ="fill" id="xp1"></div>
+            </div>
+            <div id= "xpgain1" class="xpgain">
+            </div>
+            <div class="characterframe">
+                <img class="character" src="" id="char1">
+            </div>
+            <div>
+            <button onclick="score(`1`,`10`)" class="greenButton"></button>
+                <button onClick="score(`1`,`-5`)" class="yellowButton"></button>
+                <button onClick="score(`1`,`-10`)" class="redButton"></button>
+                </div>
+            <div id="groupName1" contenteditable="true" class="groupName"></div>
+        </div>
+        <div class="group">
+            <div id="grouplevel2" class="level">
+                1
+            </div>
+            <div class="itemframe">
+                <img id="item20" class="item" src="items/Furikake_Green.png">
+                <img id="item21" class="item" src="items/Furikake_Purple.png">
+                <img id="item22" class="item" src="items/Furikake_Mix.png">
+            </div>
+            <div class="xpbar">
+                <div class ="fill" id="xp2"></div>
+            </div>
+            <div id= "xpgain2" class="xpgain"></div>
+            <div class="characterframe">
+                <img id="char2" class="character" src="">
+            </div>
+            <div>
+                <button onclick="score(`2`,`10`)" class="greenButton"></button>
+                <button onClick="score(`2`,`-5`)" class="yellowButton"></button>
+                <button onClick="score(`2`,`-10`)" class="redButton"></button>
+            </div>
+            <div id="groupName2"  contenteditable="true" class="groupName"></div>
+        </div>
+        <div class="group" style="visibility: hidden">
+            <div id="grouplevel3" class="level">
+                1
+            </div>
+            <div class="itemframe">
+                <img id="item30" class="item" src="items/Furikake_Green.png">
+                <img id="item31" class="item" src="items/Furikake_Purple.png">
+                <img id="item32" class="item" src="items/Furikake_Mix.png">
+            </div>
+            <div class="xpbar">
+                <div class ="fill" id="xp3"></div>
+            </div>
+            <div id= "xpgain3" class="xpgain"></div>
+            <div class="characterframe">
+                <img id="char3" class="character" src="">
+            </div>
+            <div>
+            <button onclick="score(`3`,`10`)" class="greenButton"></button>
+            <button onClick="score(`3`,`-5`)" class="yellowButton"></button>
+            <button onClick="score(`3`,`-10`)" class="redButton"></button>
+        </div>
+            <div id="groupName3"  contenteditable="true" class="groupName"></div>
+        </div>
+    </div>
+    <div id="reset" onclick="reset()">reset</div>
+</body>
